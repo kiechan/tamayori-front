@@ -1,0 +1,38 @@
+.login-panel { 
+    width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+}
+
+.login-box {
+    width: 100%;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: calc(100% - 18px);
+}
+.login-box input[type="text"] {
+    margin-top: 10px;
+    margin-bottom: -1px;
+}
+.login-box input[type="text"]:focus,
+.login-box input[type="password"]:focus {
+    border: 1px solid #1e88e5;
+}
+
+.login-box input[type="button"] {
+    width: 100%;
+    margin-top: 15px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #1976d2;
+    color: #ffffff;
+    border: 0px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.login-box input[type="button"]:hover {
+    background-color: #1e88e5;
+}

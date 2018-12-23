@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/submit.css">
+</head>
+
+<body>
+    <div class="submit-panel" id="submit">
+        <div class="submit-box">
+            <div class="error" v-if="message != null">{{ message }}</div>
+            <div>
+                <span>県：</span>
+                <select>
+                    <option>{{ }}</option>
+                </select>
+                <span>市区町村：</span>
+                <select>
+                    <option>{{ }}</option>
+                </select>
+                <span>カテゴリ：</span>
+                <select>
+                    <option>{{ }}</option>
+                </select>
+                <input class="category-text" type="text">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>地域</th>
+                        <th>語句</th>
+                        <th>値</th>
+                        <th>単位</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>カテゴリ</th>
+                        <td><input type="text" v-model="od.category"></td>
+                    </tr>
+                    <tr>
+                        <th>語句</th>
+                        <td><input type="text" v-model="od.word"></td>
+                    </tr>
+                    <tr>
+                        <th>値</th>
+                        <td><input type="text" v-model="od.value"></td>
+                    </tr>
+                    <tr>
+                        <th>単位</th>
+                        <td><input type="text" v-model="od.unit"></td>
+                    </tr>
+                    <tr>
+                        <th>URL</th>
+                        <td><input type="text" v-model="od.url"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align:center;">
+                <input type="button" style="margin-top:10px;" value="Add" class="change-button" @click="add">
+            </div>
+        </div>
+    </div>
+    <script src="./js/common.bundle.js"></script>
+    <script src="./js/submit.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+.edit-panel {
+    width: calc(100% - 140px);
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+}
+
+.edit-box {
+    width: 100%;
+}
+
+.edit-box table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
+}
+
+.edit-box th,
+.edit-box td {
+    padding: 6px 8px;
+    border: 1px solid #dddddd;
+    font-size: 12px;
+}
+
+.edit-box th {
+    color: #888888;
+    background-color: #eeeeee;
+}
+
+.edit-box input[type="text"] {
+    width: calc(100% - 16px);
+}
+
+.edit-button-box {
+    margin-top: 10px;
+    text-align: right;
+}
+.edit-box input[type="button"] {
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: #1976d2;
+    color: #ffffff;
+    border: 0px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.edit-box input[type="button"]:hover {
+    background-color: #1e88e5;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/edit.css">
+</head>
+
+<body>
+    <div class="edit-panel" id="edit">
+        <div class="edit-box">
+            <div class="error" v-if="message != null">{{ message }}</div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>コード</th>
+                        <td>{{ od.code }}</td>
+                    </tr>
+                    <tr>
+                        <th>地域</th>
+                        <td>{{ od.area }}</td>
+                    </tr>
+                    <tr>
+                        <th>カテゴリ</th>
+                        <td>{{ od.category }}</td>
+                    </tr>
+                    <tr>
+                        <th>語句</th>
+                        <td><input type="text" v-model="od.word"></td>
+                    </tr>
+                    <tr>
+                        <th>値</th>
+                        <td><input type="text" v-model="od.value"></td>
+                    </tr>
+                    <tr>
+                        <th>単位</th>
+                        <td><input type="text" v-model="od.unit"></td>
+                    </tr>
+                    <tr>
+                        <th>URL</th>
+                        <td><input type="text" v-model="od.url"></td>
+                    </tr>
+                    <tr>
+                        <th>作成日時</th>
+                        <td>{{ od.createDatetime }}</td>
+                    </tr>
+                    <tr>
+                        <th>更新日時</th>
+                        <td>{{ od.updateDatetime }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="edit-button-box">
+                <input type="button" value="Update" @click="update">
+                <input type="button" value="Cancel" @click="cancel">
+            </div>
+        </div>
+    </div>
+    <script src="./js/common.bundle.js"></script>
+    <script src="./js/edit.bundle.js"></script>
+</body>
+
+</html>

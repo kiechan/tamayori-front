@@ -1,0 +1,47 @@
+.datalist-panel {
+    width: calc(100% - 140px);
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+}
+
+.datalist-box {
+    width: 100%;
+}
+
+.button-box {
+    text-align: right;
+    margin-bottom: 3px;
+}
+
+.datalist-box input[type="button"] {
+    padding: 4px 12px;
+    font-size: 12px;
+    background-color: #1976d2;
+    color: #ffffff;
+    border: 0px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.datalist-box input[type="button"]:hover {
+    background-color: #1e88e5;
+}
+
+.datalist-box table {
+    width: calc(100%);
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
+}
+
+.datalist-box th,
+.datalist-box td {
+    padding: 6px 8px;
+    border: 1px solid #dddddd;
+    font-size: 12px;
+}
+
+.datalist-box th {
+    color: #888888;
+    background-color: #eeeeee;
+}

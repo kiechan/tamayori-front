@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/datalist.css">
+</head>
+
+<body>
+    <div class="datalist-panel" id="datalist">
+        <div class="datalist-box">
+            <div class="button-box">
+                <input type="button" value="Add" @click="add">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>編集</th>
+                        <th>ODコード</th>
+                        <th>地域</th>
+                        <th>カテゴリ</th>
+                        <th>語句</th>
+                        <th>値</th>
+                        <th>単位</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="od in odList">
+                        <td style="width:70px;text-align:center;"><input type="button" value="Edit" @click="edit(od.code)"></td>
+                        <td style="width:70px;text-align:right;">{{ od.code }}</td>
+                        <td>{{ od.area }}</td>
+                        <td>{{ od.category }}</td>
+                        <td>{{ od.word }}</td>
+                        <td>{{ od.value }}</td>
+                        <td>{{ od.unit }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./js/common.bundle.js"></script>
+    <script src="./js/datalist.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/top.css">
+</head>
+
+<body>
+    <div class="login-panel" id="login">
+        <div class="login-box">
+            <div style="color:#888888;">Welcome to TAMAYORI Front</div>
+            <div>
+                <input type="text" v-model="loginInfo.id" placeholder="ID">
+            </div>
+            <div>
+                <input type="password" v-model="loginInfo.password" placeholder="Password">
+            </div>
+            <div>
+                <input type="button" value="Login" @click="login">
+            </div>
+        </div>
+    </div>
+    <script src="./js/common.bundle.js"></script>
+    <script src="./js/top.bundle.js"></script>
+</body>
+
+</html>

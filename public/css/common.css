@@ -1,0 +1,29 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #cccccc;
+}
+
+* {
+    font-family: meiryo;
+    outline: none;
+}
+
+.error {
+    color: #f44336;
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 16px;
+    padding: 6px 8px;
+    border: 1px solid #dddddd;
+    color: #444444;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 1px solid #1e88e5;
+}
