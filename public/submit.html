@@ -12,19 +12,20 @@
         <div class="submit-box">
             <div class="error" v-if="message != null">{{ message }}</div>
             <div>
-                <span>県：</span>
-                <select>
-                    <option>{{ }}</option>
+                <span>| 県:</span>
+                <select v-model="odCommon.prefectures" @change="setMunicipality">
+                    <option v-for="p in select.prefectures" v-bind:value="p.code">{{ p.name }}</option>
                 </select>
-                <span>市区町村：</span>
-                <select>
-                    <option>{{ }}</option>
+                <span v-if="odCommon.prefectures != ''">| 市区町村:</span>
+                <select v-if="odCommon.prefectures != ''" v-model="odCommon.municipality">
+                    <option v-for="p in select.municipalities" v-bind:value="p.code">{{ p.name }}</option>
                 </select>
-                <span>カテゴリ：</span>
-                <select>
-                    <option>{{ }}</option>
+                <span>| カテゴリ:</span>
+                <select v-model="odCommon.category">
+                    <option v-for="p in select.categories" v-bind:value="p.code">{{ p.name }}</option>
                 </select>
-                <input class="category-text" type="text">
+                <span>| カテゴリ(その他):</span>
+                <input class="category-text" type="text" v-model="odCommon.categoryElse">
             </div>
             <table>
                 <thead>
@@ -34,37 +35,20 @@
                         <th>値</th>
                         <th>単位</th>
                         <th>URL</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
+                    <tr v-for="(o, index) in ods">
+                        <td><input type="text" v-model="o.district"></td>
+                        <td><input type="text" v-model="o.word"></td>
+                        <td><input type="text" v-model="o.value"></td>
+                        <td><input type="text" v-model="o.unit"></td>
+                        <td><input type="text" v-model="o.url"></td>
+                        <td><input type="button" value="+" @click="plus(index)"></td>
+                        <td><input type="button" value="-" @click="minus(index)"></td>
                     </tr>
-                    <tr>
-                        <th>カテゴリ</th>
-                        <td><input type="text" v-model="od.category"></td>
-                    </tr>
-                    <tr>
-                        <th>語句</th>
-                        <td><input type="text" v-model="od.word"></td>
-                    </tr>
-                    <tr>
-                        <th>値</th>
-                        <td><input type="text" v-model="od.value"></td>
-                    </tr>
-                    <tr>
-                        <th>単位</th>
-                        <td><input type="text" v-model="od.unit"></td>
-                    </tr>
-                    <tr>
-                        <th>URL</th>
-                        <td><input type="text" v-model="od.url"></td>
-                    </tr>
-                </tbody>
             </table>
             <div style="text-align:center;">
                 <input type="button" style="margin-top:10px;" value="Add" class="change-button" @click="add">
