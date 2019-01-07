@@ -42,15 +42,8 @@ const app = new Vue({
             app.ods.splice(index, 1)
         },
         setMunicipality: () => {
-            let prefecture = ''
-            for (let i = 0; i < app.select.prefectures.length; i++) {
-                if (app.odCommon.prefectures == app.select.prefectures[i].code) {
-                    prefecture = app.select.prefectures[i].name
-                    break
-                }
-            }
             $.ajax({
-                url: 'http://localhost:3000/municipality?prefecture=' + prefecture,
+                url: 'http://localhost:3000/municipality?code=' + app.odCommon.prefectures,
                 type: 'get'
             }).done((result) => {
                 console.log(result)
