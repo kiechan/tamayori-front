@@ -69,6 +69,12 @@ const app = new Vue({
                     break
                 }
             }
+            let categoryName = ''
+            if (app.odCommon.category !== '') {
+                categoryName = app.select.categories.find(c => c.code == app.odCommon.category).name
+            } else {
+                categoryName = app.odCommon.categoryElse
+            }
             $.ajax({
                 url: 'http://localhost:3000/odsave/',
                 type: 'post',
@@ -76,7 +82,7 @@ const app = new Vue({
                     prefectures: prefecture,
                     municipality: municipality,
                     category_code: (app.odCommon.category != '') ? app.odCommon.category : null,
-                    category_name: app.odCommon.categoryElse,
+                    category_name: categoryName,
                     data: app.ods
                 }
             }).done(() => {
